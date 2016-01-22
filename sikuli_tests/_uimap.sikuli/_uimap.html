@@ -1,0 +1,147 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>_uimap.sikuli</h2> <a href="_uimap.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="cmt">########################################################</span>
+<span class="cmt"># UI map for XYZ</span>
+<span class="cmt">########################################################</span>
+<span class="kw">from</span> sikuli <span class="kw">import</span> *
+<span class="cmt">########################################################</span>
+<span class="kw">class</span> LoginPage:
+
+    username = <img src="username.png" />
+
+    password = <img src="password.png" />
+
+    submitButton = <img src="submitButton.png" />
+
+<span class="kw">class</span> MainPage:
+
+    enterButton = Pattern(<img src="enterButton.png" />).targetOffset(-<span class="dig">43</span>,-<span class="dig">2</span>)
+
+    adminMenu = Pattern(<img src="adminMenu.png" />).similar(<span class="dig">0.87</span>)
+
+    adminMovedLectures = <img src="adminMovedLectures.png" />
+
+<span class="kw">class</span> MovedLectures:
+
+    addNewItem = <img src="addNewItem.png" />
+
+    removeItem = <img src="removeItem.png" />
+
+    editItem = <img src="editItem.png" />
+
+    refreshGrid = Pattern(<img src="refreshGrid.png" />).targetOffset(<span class="dig">29</span>,<span class="dig">2</span>)
+
+    popUpTitle = <img src="1453407407372.png" />
+
+    courseDropDown = Pattern(<img src="courseDropDown.png" />).similar(<span class="dig">0.80</span>).targetOffset(-<span class="dig">84</span>,-<span class="dig">3</span>)
+
+    startDate = Pattern(<img src="startDate.png" />).targetOffset(<span class="dig">53</span>,-<span class="dig">6</span>)
+
+    endDate = Pattern(<img src="endDate.png" />).targetOffset(-<span class="dig">91</span>,-<span class="dig">2</span>)
+
+    trainingRoomDropDown = Pattern(<img src="trainingRoomDropDown.png" />).targetOffset(-<span class="dig">71</span>,<span class="dig">1</span>)
+
+    updateButton = Pattern(<img src="updateButton.png" />).similar(<span class="dig">0.80</span>)
+
+    cancelButton = <img src="cancelButton.png" />
+
+    validForAllCOursesText = <img src="validForAllCOursesText.png" />
+
+    allCoursesList = <img src="allCoursesList.png" />
+
+    courseDropDownOption = <img src="courseDropDownOption.png" />
+
+
+    courseFilterDropDownAllCourses = <img src="courseFilterDropDown.png" />
+
+    deletePopUp = Pattern(<img src="deletePopUp.png" />).targetOffset(-<span class="dig">32</span>,<span class="dig">6</span>)
+
+    validForAllTrainingRooms = <img src="validForAllTrainingRooms.png" />
+
+    startDateValidationError = <img src="startDateValidationError.png" />
+
+    courseValidationError = <img src="1453411922065.png" />
+
+
+    validEntry = Pattern(<img src="validEntry.png" />).similar(<span class="dig">0.32</span>)
+
+    emptyGrid = <img src="emptyGrid.png" />
+
+    coursesFilterDropdown = Pattern(<img src="coursesFilterDropdown.png" />).targetOffset(<span class="dig">215</span>,<span class="dig">0</span>)
+
+    coursesFilterDropdownAllSelected = Pattern(<img src="coursesFilterDropdownAllSelected.png" />).targetOffset(<span class="dig">217</span>,<span class="dig">2</span>)
+
+    coursesFilterDropdownAllSelectedManualEntry = <img src="coursesFilterDropdownAllSelectedManualEntry.png" />
+</pre>
+</body>
+</html>
