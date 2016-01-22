@@ -5,6 +5,8 @@ from sikuli import *
 ########################################################
 class LoginPage:
 
+    loginHeading = "loginHeading.png"
+
     username = "username.png"
 
     password = "password.png"
@@ -14,6 +16,8 @@ class LoginPage:
 class MainPage:
 
     enterButton = Pattern("enterButton.png").targetOffset(-43,-2)
+
+    logoutButton = "logoutButton.png"
 
     adminMenu = Pattern("adminMenu.png").similar(0.87)
 

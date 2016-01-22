@@ -77,6 +77,8 @@
 <span class="cmt">########################################################</span>
 <span class="kw">class</span> LoginPage:
 
+    loginHeading = <img src="loginHeading.png" />
+
     username = <img src="username.png" />
 
     password = <img src="password.png" />
@@ -86,6 +88,8 @@
 <span class="kw">class</span> MainPage:
 
     enterButton = Pattern(<img src="enterButton.png" />).targetOffset(-<span class="dig">43</span>,-<span class="dig">2</span>)
+
+    logoutButton = <img src="logoutButton.png" />
 
     adminMenu = Pattern(<img src="adminMenu.png" />).similar(<span class="dig">0.87</span>)
 
@@ -152,16 +156,24 @@
 
 
     exportToPDF = <img src="exportToPDF.png" />
-
     exportPopUp = <img src="exportPopUp.png" />
-
-
-
-
     exportedValidEntry = <img src="exportedValidEntry.png" />
 
 <span class="kw">class</span> EntryExam:
     applicationForAcademyHeading = <img src="applicationForAcademyHeading.png" />
+
+<span class="kw">class</span> TALS_LN:
+    input_UsernameOrEmail = <img src="input_UsernameOrEmail.png" />
+    input_Password = <img src="input_Password.png" />
+    input_Submit = <img src="input_Submit.png" />
+    icon_Refresh = Pattern(<img src="icon_Refresh.png" />).similar(<span class="dig">0.80</span>)
+    label_FirstNameEn = Pattern(<img src="label_FirstNameEn.png" />).exact().targetOffset(<span class="dig">200</span>,<span class="dig">0</span>)
+    label_LastNameEn = Pattern(<img src="label_LastNameEn.png" />).exact().targetOffset(<span class="dig">200</span>,<span class="dig">0</span>)
+    message_InvalidMinLengthFirstName = Pattern(<img src="message_InvalidMinLengthFirstName.png" />).similar(<span class="dig">0.80</span>)
+    message_InvalidMinLengthLastName = Pattern(<img src="message_InvalidMinLengthLastName.png" />).similar(<span class="dig">0.80</span>)
+    message_InvalidMaxLengthFirstName = Pattern(<img src="message_InvalidMaxLengthFirstName.png" />).similar(<span class="dig">0.80</span>)
+    message_InvalidMaxLengthLastName = Pattern(<img src="message_InvalidMaxLengthLastName.png" />).similar(<span class="dig">0.80</span>)
+    message_Success = <img src="message_Success.png" />
 </pre>
 </body>
 </html>
