@@ -25,6 +25,8 @@ class MainPage:
 
     entryExamMenu = "entryExamMenu.png"
 
+    applicationForAcademyMenu = "applicationForAcademyMenu.png"
+
     adminMovedLectures = "adminMovedLectures.png"
 
 class MovedLectures:

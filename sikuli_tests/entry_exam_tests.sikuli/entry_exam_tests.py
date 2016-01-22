@@ -23,6 +23,7 @@ class EntryExamTests(unittest.TestCase):
 
         wheel(EntryExam.applicationForAcademyHeading, WHEEL_DOWN, 2)
         assert exists(EntryExam.applicationForAcademyHeading)
+        #self.assertTrue(exists(EntryExam.applicationForAcademyHeading))
 
     def test_002_NavigateToEntryExamWithoutLogin(self):
         if exists(MainPage.logoutButton):
