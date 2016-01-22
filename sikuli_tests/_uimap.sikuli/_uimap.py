@@ -22,7 +22,7 @@ class MainPage:
     entryExamMenu = "entryExamMenu.png"
 
     adminMovedLectures = "adminMovedLectures.png"
-    
+
 class MovedLectures:
 
     addNewItem = "addNewItem.png"
@@ -63,7 +63,7 @@ class MovedLectures:
     startDateValidationError = "startDateValidationError.png"
 
     courseValidationError = "1453411922065.png"
-         
+
 
     validEntry = Pattern("validEntry.png").similar(0.32)
 
@@ -80,14 +80,21 @@ class MovedLectures:
 
 
     exportToPDF = "exportToPDF.png"
-
     exportPopUp = "exportPopUp.png"
-
-    
-    
-
     exportedValidEntry = "exportedValidEntry.png"
 
 class EntryExam:
     applicationForAcademyHeading = "applicationForAcademyHeading.png"
-    
+
+class TALS_LN:
+    input_UsernameOrEmail = "input_UsernameOrEmail.png"
+    input_Password = "input_Password.png"
+    input_Submit = "input_Submit.png"
+    icon_Refresh = Pattern("icon_Refresh.png").similar(0.80)
+    label_FirstNameEn = Pattern("label_FirstNameEn.png").exact().targetOffset(200,0)
+    label_LastNameEn = Pattern("label_LastNameEn.png").exact().targetOffset(200,0)
+    message_InvalidMinLengthFirstName = Pattern("message_InvalidMinLengthFirstName.png").similar(0.80)
+    message_InvalidMinLengthLastName = Pattern("message_InvalidMinLengthLastName.png").similar(0.80)
+    message_InvalidMaxLengthFirstName = Pattern("message_InvalidMaxLengthFirstName.png").similar(0.80)
+    message_InvalidMaxLengthLastName = Pattern("message_InvalidMaxLengthLastName.png").similar(0.80)
+    message_Success = "message_Success.png"
