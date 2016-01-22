@@ -37,54 +37,54 @@ class SmokeTests(unittest.TestCase):
     # Boundary value anaylis testing lower limit of first name in english
     # (minValue=2)
     def test_004_ValidateFirstNameEn_OneSymbol(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "T")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "T")
         submitChanges()
-        wait(TALS.message_InvalidMinLengthFirstName, 5)
-        self.assertTrue(exists(TALS.message_InvalidMinLengthFirstName))
+        wait(UserSettings.message_InvalidMinLengthFirstName, 5)
+        self.assertTrue(exists(UserSettings.message_InvalidMinLengthFirstName))
 
     def test_005_ValidateFirstNameEn_TwoSymbols(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "Te")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "Te")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_006_ValidateFirstNameEn_ThreeSymbols(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "Tes")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "Tes")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     # Boundary value anaylis testing upper limit of first name in english
     # (maxValue=30)
     def test_007_ValidateFirstNameEn_TwentyNineSymbol(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "TesttesttesttestTesttesttestT")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestT")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_008_ValidateFirstNameEn_ThirtySymbols(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "TesttesttesttestTesttesttestTe")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestTe")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_009_ValidateFirstNameEn_ThirtyOneSymbols(self):
-        pageDownToVisible(TALS.label_FirstNameEn)
-        changeInputData(TALS.label_FirstNameEn, "TesttesttesttestTesttesttestTes")
+        pageDownToVisible(UserSettings.label_FirstNameEn)
+        changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestTes")
         submitChanges()
-        wait(TALS.message_InvalidMaxLengthFirstName, 5)
-        self.assertTrue(exists(TALS.message_InvalidMaxLengthFirstName))
+        wait(UserSettings.message_InvalidMaxLengthFirstName, 5)
+        self.assertTrue(exists(UserSettings.message_InvalidMaxLengthFirstName))
 
     def test_010_ResetFirstNameEn(self):
-        changeInputData(TALS.label_FirstNameEn, "")
+        changeInputData(UserSettings.label_FirstNameEn, "")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
 ################################################################################
 ################################ Last Name En ##################################
@@ -93,54 +93,54 @@ class SmokeTests(unittest.TestCase):
     # Boundary value anaylis testing lower limit of last name in english
     # (minValue=2)
     def test_011_ValidateLastNameEn_OneSymbol(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "T")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "T")
         submitChanges()
-        wait(TALS.message_InvalidMinLengthLastName, 5)
-        self.assertTrue(exists(TALS.message_InvalidMinLengthLastName))
+        wait(UserSettings.message_InvalidMinLengthLastName, 5)
+        self.assertTrue(exists(UserSettings.message_InvalidMinLengthLastName))
 
     def test_012_ValidateLastNameEn_TwoSymbols(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "Te")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "Te")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_013_ValidateLastNameEn_ThreeSymbols(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "Tes")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "Tes")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     # Boundary value anaylis testing upper limit of last name in english
     # (maxValue=30)
     def test_014_ValidateLastNameEn_TwentyNineSymbol(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "TesttesttesttestTesttesttestT")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestT")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_015_ValidateLastNameEn_ThirtySymbols(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "TesttesttesttestTesttesttestTe")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestTe")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
     def test_016_ValidateLastNameEn_ThirtyOneSymbols(self):
-        pageDownToVisible(TALS.label_LastNameEn)
-        changeInputData(TALS.label_LastNameEn, "TesttesttesttestTesttesttestTes")
+        pageDownToVisible(UserSettings.label_LastNameEn)
+        changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestTes")
         submitChanges()
-        wait(TALS.message_InvalidMaxLengthLastName, 5)
-        self.assertTrue(exists(TALS.message_InvalidMaxLengthLastName))
+        wait(UserSettings.message_InvalidMaxLengthLastName, 5)
+        self.assertTrue(exists(UserSettings.message_InvalidMaxLengthLastName))
 
     def test_017_ResetFirstNameEn(self):
-        changeInputData(TALS.label_LastNameEn, "")
+        changeInputData(UserSettings.label_LastNameEn, "")
         submitChanges()
-        wait(TALS.message_Success, 5)
-        self.assertTrue(exists(TALS.message_Success))
+        wait(UserSettings.message_Success, 5)
+        self.assertTrue(exists(UserSettings.message_Success))
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(SmokeTests)

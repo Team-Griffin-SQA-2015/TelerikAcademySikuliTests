@@ -9,6 +9,7 @@ from _uimap import *
 ################################################################################
 ################################ Nikola Nenov ##################################
 ################################################################################
+
 def RunBrowserToUrl(browser,toUrl):
     #TestAction("Start " +browser +" "+toUrl)
     sleep(0.5)
@@ -158,3 +159,73 @@ def changeInputData(image, text):
 
 def submitChanges():
     type(Key.ENTER)
+
+################################################################################
+############################## Nikola Bogomirov ################################
+################################################################################
+
+def AddSearchTerm(word,count):
+    click(SearchTerms.button_Add)
+    sleep(2)
+    click(SearchTerms.label_Word)
+    type(word)
+    sleep(2)
+    click(SearchTerms.input_Count)
+    type(count)
+    sleep(2)
+    click(SearchTerms.button_Update)
+
+def DeleteSearchTerm():
+    reg = find(SearchTerms.gridRowWithCorrectResult).right(200)
+    click(reg.find(SearchTerms.button_Delete))
+    sleep(2)
+    type(Key.ENTER)
+
+def ExportSearchTermToPDF():
+    click(SearchTerms.button_ExportToPDF)
+    wait(SearchTerms.bar_SaveFileType,30)
+    type("export")
+    type(Key.ENTER)
+    sleep(2)
+
+def OpenPDFFile():
+    RunBrowserToUrl("chrome","C:\Users\Niki\Desktop\export.pdf")
+    sleep(2)
+
+def AddSurvey(name):
+    click(SearchTerms.button_Add)
+    sleep(2)
+    click(Surveys.label_SurveyName)
+    type(name)
+    sleep(2)
+    click(Surveys.label_ActiveFrom)
+    type("23/01/2016 00:00:00")
+    sleep(2)
+    click(Surveys.label_ActiveTo)
+    type("25/01/2016 00:00:00")
+    click(Surveys.label_SurveyName)
+    sleep(2)
+    click(SearchTerms.button_Update)
+
+def ExpandSurvey():
+    sleep(1)
+    reg=find(Surveys.survey_Result).left(100)
+    click(reg.find(Surveys.button_Expand))
+    sleep(1)
+
+def AddQuestion(questionType,question):
+    for i in range(1,13):
+        type(Key.DOWN)
+    click(SearchTerms.button_Add)
+    wait(Surveys.label_QuestionType)
+    click(Surveys.label_QuestionType)
+    click(questionType)
+    click(Surveys.label_QuestionText)
+    type(question)
+    for checkbox in findAll(Surveys.image_CheckBox):
+        click(checkbox)
+    sleep(1)
+    for i in range(1,3):
+            type(Key.DOWN)
+    sleep(2)
+    click(SearchTerms.button_Update)

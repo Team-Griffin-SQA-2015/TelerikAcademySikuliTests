@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Entry Exam Tests Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2016-01-22 15:33:29</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:38.064000</p>
-<p class='attribute'><strong>Status:</strong> Pass 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2016-01-22 14:11:15</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:04.325000</p>
+<p class='attribute'><strong>Status:</strong> Error 2</p>
 
 <p class='description'></p>
 </div>
@@ -221,31 +221,85 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>EntryExamTests</td>
     <td>2</td>
+    <td>0</td>
+    <td>0</td>
     <td>2</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_001_NavigateToEntryExamWithLoggedUser</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_001_NavigateToEntryExamWithLoggedUser</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
+
+    <div id='div_ft1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.1: Traceback (most recent call last):
+  File "D:\Users\Emi\GitHub\Team-Griffin-SQA-2015\TelerikAcademySikuliTests\sikuli_tests\entry_exam_tests.sikuli\entry_exam_tests.py", line 22, in test_001_NavigateToEntryExamWithLoggedUser
+    wait(MainPage.entryExamMenu)
+  File "C:\Sikuli\sikulix.jar\Lib\sikuli\Region.py", line 55, in wait
+    return JRegion.wait(self, target)
+FindFailed: FindFailed: can not find entryExamMenu.png in R[0,0 1366x768]@S(0)
+  Line 2189, in file Region.java
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_002_NavigateToEntryExamWithoutLogin</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_002_NavigateToEntryExamWithoutLogin</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
+
+    <div id='div_ft1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.2: Traceback (most recent call last):
+  File "D:\Users\Emi\GitHub\Team-Griffin-SQA-2015\TelerikAcademySikuliTests\sikuli_tests\entry_exam_tests.sikuli\entry_exam_tests.py", line 39, in test_002_NavigateToEntryExamWithoutLogin
+    wait(LoginPage.loginHeading, 30)
+  File "C:\Sikuli\sikulix.jar\Lib\sikuli\Region.py", line 57, in wait
+    return JRegion.wait(self, target, timeout)
+FindFailed: FindFailed: can not find loginHeading.png in R[0,0 1366x768]@S(0)
+  Line 2189, in file Region.java
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>2</td>
+    <td>0</td>
+    <td>0</td>
     <td>2</td>
-    <td>0</td>
-    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
