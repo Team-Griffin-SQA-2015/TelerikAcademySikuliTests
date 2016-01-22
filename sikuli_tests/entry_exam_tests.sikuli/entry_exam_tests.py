@@ -13,15 +13,32 @@ class EntryExamTests(unittest.TestCase):
         pass
 
     def test_001_NavigateToEntryExamWithLoggedUser(self):
+        wait(MainPage.enterButton, 20)
         if exists(MainPage.enterButton):
             AdminLogin("griffin","Start123")
-
+        wait(MainPage.logoutButton)
+        wait(MainPage.telerikAcademyMenu)
         hover(MainPage.telerikAcademyMenu)
         wait(MainPage.entryExamMenu)
         click(MainPage.entryExamMenu)
 
         wheel(EntryExam.applicationForAcademyHeading, WHEEL_DOWN, 2)
         assert exists(EntryExam.applicationForAcademyHeading)
+
+    def test_002_NavigateToEntryExamWithoutLogin(self):
+        wait(MainPage.logoutButton, 20)
+        if exists(MainPage.logoutButton):
+            click(MainPage.logoutButton)
+
+        wait(MainPage.enterButton)
+        wait(MainPage.telerikAcademyMenu)
+        hover(MainPage.telerikAcademyMenu)
+        wait(MainPage.entryExamMenu)
+        click(MainPage.entryExamMenu)
+
+        wait(LoginPage.loginHeading, 30)
+        assert exists(LoginPage.loginHeading)
+
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(EntryExamTests)
