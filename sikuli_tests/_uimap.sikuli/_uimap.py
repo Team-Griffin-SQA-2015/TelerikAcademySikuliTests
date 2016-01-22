@@ -17,6 +17,10 @@ class MainPage:
 
     adminMenu = Pattern("adminMenu.png").similar(0.87)
 
+    telerikAcademyMenu = "telerikAcademyMenu.png"
+
+    entryExamMenu = "entryExamMenu.png"
+
     adminMovedLectures = "adminMovedLectures.png"
     
 class MovedLectures:
@@ -83,4 +87,7 @@ class MovedLectures:
     
 
     exportedValidEntry = "exportedValidEntry.png"
+
+class EntryExam:
+    applicationForAcademyHeading = "applicationForAcademyHeading.png"
     
