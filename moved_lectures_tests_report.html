@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Moved Lectures Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2016-01-22 13:07:07</p>
-<p class='attribute'><strong>Duration:</strong> 0:05:35.227000</p>
-<p class='attribute'><strong>Status:</strong> Pass 8 Failure 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2016-01-22 13:59:32</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:42.744000</p>
+<p class='attribute'><strong>Status:</strong> Pass 1</p>
 
 <p class='description'></p>
 </div>
@@ -221,116 +221,25 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>MovedLecturesTests</td>
-    <td>10</td>
-    <td>8</td>
-    <td>2</td>
+    <td>1</td>
+    <td>1</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',10)">Detail</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_001_AddLectureWithoutCourseAddsLectureForAllCourses</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_002_AddLectureWithOutTrainingRoomLeavesTrainingRoomFieldBlank</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_003_AddLectureWithValidDetailsCreatesNewEntry</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='ft1.4' class='none'>
-    <td class='failCase'><div class='testcase'>test_004_AddLectureWithEndDateBeforeCurrentDate</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        fail</a>
-
-    <div id='div_ft1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.4: Traceback (most recent call last):
-  File "D:\Telerik Academy\Repos\TelerikAcademySikuliTests\sikuli_tests\moved_lectures_tests.sikuli\moved_lectures_tests.py", line 50, in test_004_AddLectureWithEndDateBeforeCurrentDate
-    assert exists(MovedLectures.startDateValidationError)
-AssertionError
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft1.5' class='none'>
-    <td class='failCase'><div class='testcase'>test_005_AddLectureWithSameDetailsMoreThanOnceDisplaysError</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        fail</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft1.5: Traceback (most recent call last):
-  File "D:\Telerik Academy\Repos\TelerikAcademySikuliTests\sikuli_tests\moved_lectures_tests.sikuli\moved_lectures_tests.py", line 58, in test_005_AddLectureWithSameDetailsMoreThanOnceDisplaysError
-    assert exists(MovedLectures.startDateValidationError)
-AssertionError
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt1.6' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_006_DeleteButtonRemovesTheRespectiveEntryFromTheList</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.7' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_007_VerifyThatUpdatingAnEntryWithValidDetailsChangesTheCurrentDetails</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.8' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_008_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.9' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_009_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.10' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_010_VerifyThatClickingExportPDFCreatedPDFFileWithTheContentsOfTheGrid</div></td>
     <td colspan='5' align='center'>pass</td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>10</td>
-    <td>8</td>
-    <td>2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>
