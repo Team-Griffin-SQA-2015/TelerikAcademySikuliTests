@@ -77,6 +77,8 @@
 <span class="cmt">########################################################</span>
 <span class="kw">class</span> LoginPage:
 
+    loginHeading = <img src="loginHeading.png" />
+
     username = <img src="username.png" />
 
     password = <img src="password.png" />
@@ -86,6 +88,8 @@
 <span class="kw">class</span> MainPage:
 
     enterButton = Pattern(<img src="enterButton.png" />).targetOffset(-<span class="dig">43</span>,-<span class="dig">2</span>)
+
+    logoutButton = <img src="logoutButton.png" />
 
     adminMenu = Pattern(<img src="adminMenu.png" />).similar(<span class="dig">0.87</span>)
 
