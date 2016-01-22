@@ -70,4 +70,17 @@ class MovedLectures:
     coursesFilterDropdownAllSelected = Pattern("coursesFilterDropdownAllSelected.png").targetOffset(217,2)
 
     coursesFilterDropdownAllSelectedManualEntry = "coursesFilterDropdownAllSelectedManualEntry.png"
+
+
+    consoleWindow = "consoleWindow.png"
+
+
+    exportToPDF = "exportToPDF.png"
+
+    exportPopUp = "exportPopUp.png"
+
+    
+    
+
+    exportedValidEntry = "exportedValidEntry.png"
     

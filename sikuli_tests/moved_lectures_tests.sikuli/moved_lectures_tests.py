@@ -87,26 +87,44 @@ class MovedLecturesTests(unittest.TestCase):
     #     click(MovedLectures.refreshGrid)
     #     assert exists(MovedLectures.validForAllCOursesText)
 
-    def test_009_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
+    # def test_009_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
+    #     click(MovedLectures.addNewItem)
+    #     wait(MovedLectures.popUpTitle)
+    #     click(MovedLectures.updateButton)
+    #     click(MovedLectures.addNewItem)
+    #     FillInLectureFullDetails()
+    #     click(MovedLectures.refreshGrid)
+    #     click(MovedLectures.coursesFilterDropdown)
+    #     click(MovedLectures.courseFilterDropDownAllCourses)
+    #     assert exists(MovedLectures.allCoursesList)
+    #     click(MovedLectures.coursesFilterDropdownAllSelectedManualEntry)
+    #     type("a",KeyModifier.CTRL)
+    #     type("Archer QA"+Key.TAB)
+    #     assert exists(MovedLectures.validEntry)
+
+    def test_010_VerifyThatClickingExportPDFCreatedPDFFileWithTheContentsOfTheGrid(self):
+        currentTime = time.strftime("%H%M%S")
+        path = "D:\\testexport{0}.pdf".format(currentTime);
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)
-        click(MovedLectures.updateButton)
-        click(MovedLectures.addNewItem)
         FillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
-        click(MovedLectures.coursesFilterDropdown)
-        click(MovedLectures.courseFilterDropDownAllCourses)
-        assert exists(MovedLectures.allCoursesList)
-        click(MovedLectures.coursesFilterDropdownAllSelectedManualEntry)
-        type("a",KeyModifier.CTRL)
-        type("Archer QA"+Key.TAB)
-        assert exists(MovedLectures.validEntry)
+        click(MovedLectures.exportToPDF)
+        wait(MovedLectures.exportPopUp)
+        type(path+Key.ENTER)
+        type("d",KEY_WIN); sleep(1)
+        type("r", KEY_WIN); sleep(1)
+        type(path);sleep(0.5);
+        type(Key.ENTER);sleep(1);
+        type(Key.NUM1,KeyModifier.CTRL)
+        assert exists(MovedLectures.exportedValidEntry)
+
 
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(MovedLecturesTests)
 
-    outfile = open("report.html", "w")
+    outfile = open("moved_lectures_tests_report.html", "w")
     runner = HTMLTestRunner.HTMLTestRunner(stream=outfile, title='Moved Lectures Report' )
     runner.run(suite)
     outfile.close()
