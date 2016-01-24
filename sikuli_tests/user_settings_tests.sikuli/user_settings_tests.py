@@ -8,7 +8,6 @@ bdLibPath = os.path.abspath(sys.argv[0] + "..")
 if not bdLibPath in sys.path:
     sys.path.append(bdLibPath)
 
-
 class SmokeTests(unittest.TestCase):
     def setUp(self):
         pass
@@ -22,15 +21,18 @@ class SmokeTests(unittest.TestCase):
 
     def test_001_NavigateToTelerikAcademy(self):
         runBrowserToUrl(defaultBrowser, baseUrl)
+        assert exists(UserSettings.icon_Refresh)
 
     def test_002_LoginUser(self):
         switchToAddressBar()
         navigateTo(baseUrl + "/Users/Auth/Login")
         enterUserCredentials(defaultUsername, defaultPassword)
+        assert exists(UserSettings.icon_Refresh)
 
     def test_003_NavigateToUserSettings(arg):
         switchToAddressBar()
         navigateTo(baseUrl + "/Users/Profile/Settings")
+        assert exists(UserSettings.icon_Refresh)
 
 ################################################################################
 ################################ First Name En #################################
@@ -43,21 +45,21 @@ class SmokeTests(unittest.TestCase):
         changeInputData(UserSettings.label_FirstNameEn, "T")
         submitChanges()
         wait(UserSettings.message_InvalidMinLengthFirstName, 5)
-        self.assertTrue(exists(UserSettings.message_InvalidMinLengthFirstName))
+        assert exists(UserSettings.message_InvalidMinLengthFirstName)
 
     def test_005_ValidateFirstNameEn_TwoSymbols(self):
         pageDownToVisible(UserSettings.label_FirstNameEn)
         changeInputData(UserSettings.label_FirstNameEn, "Te")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_006_ValidateFirstNameEn_ThreeSymbols(self):
         pageDownToVisible(UserSettings.label_FirstNameEn)
         changeInputData(UserSettings.label_FirstNameEn, "Tes")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     # Boundary value anaylis testing upper limit of first name in english
     # (maxValue=30)
@@ -66,27 +68,27 @@ class SmokeTests(unittest.TestCase):
         changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestT")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_008_ValidateFirstNameEn_ThirtySymbols(self):
         pageDownToVisible(UserSettings.label_FirstNameEn)
         changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestTe")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_009_ValidateFirstNameEn_ThirtyOneSymbols(self):
         pageDownToVisible(UserSettings.label_FirstNameEn)
         changeInputData(UserSettings.label_FirstNameEn, "TesttesttesttestTesttesttestTes")
         submitChanges()
         wait(UserSettings.message_InvalidMaxLengthFirstName, 5)
-        self.assertTrue(exists(UserSettings.message_InvalidMaxLengthFirstName))
+        assert exists(UserSettings.message_InvalidMaxLengthFirstName)
 
     def test_010_ResetFirstNameEn(self):
         changeInputData(UserSettings.label_FirstNameEn, "")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
 ################################################################################
 ################################ Last Name En ##################################
@@ -99,21 +101,21 @@ class SmokeTests(unittest.TestCase):
         changeInputData(UserSettings.label_LastNameEn, "T")
         submitChanges()
         wait(UserSettings.message_InvalidMinLengthLastName, 5)
-        self.assertTrue(exists(UserSettings.message_InvalidMinLengthLastName))
+        assert exists(UserSettings.message_InvalidMinLengthLastName)
 
     def test_012_ValidateLastNameEn_TwoSymbols(self):
         pageDownToVisible(UserSettings.label_LastNameEn)
         changeInputData(UserSettings.label_LastNameEn, "Te")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_013_ValidateLastNameEn_ThreeSymbols(self):
         pageDownToVisible(UserSettings.label_LastNameEn)
         changeInputData(UserSettings.label_LastNameEn, "Tes")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     # Boundary value anaylis testing upper limit of last name in english
     # (maxValue=30)
@@ -122,27 +124,27 @@ class SmokeTests(unittest.TestCase):
         changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestT")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_015_ValidateLastNameEn_ThirtySymbols(self):
         pageDownToVisible(UserSettings.label_LastNameEn)
         changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestTe")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
     def test_016_ValidateLastNameEn_ThirtyOneSymbols(self):
         pageDownToVisible(UserSettings.label_LastNameEn)
         changeInputData(UserSettings.label_LastNameEn, "TesttesttesttestTesttesttestTes")
         submitChanges()
         wait(UserSettings.message_InvalidMaxLengthLastName, 5)
-        self.assertTrue(exists(UserSettings.message_InvalidMaxLengthLastName))
+        assert exists(UserSettings.message_InvalidMaxLengthLastName)
 
     def test_017_ResetFirstNameEn(self):
         changeInputData(UserSettings.label_LastNameEn, "")
         submitChanges()
         wait(UserSettings.message_Success, 5)
-        self.assertTrue(exists(UserSettings.message_Success))
+        assert exists(UserSettings.message_Success)
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(SmokeTests)

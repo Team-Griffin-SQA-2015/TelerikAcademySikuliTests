@@ -1,12 +1,13 @@
+from _lib import *
 import unittest
 import time
-bdLibPath=os.path.abspath(sys.argv[0]+"..")
-if not bdLibPath in sys.path: sys.path.append(bdLibPath)
-from _lib import *
 
-    
+bdLibPath=os.path.abspath(sys.argv[0]+"..")
+if not bdLibPath in sys.path:
+    sys.path.append(bdLibPath)
+
 class MovedLecturesTests(unittest.TestCase):
-    
+
     def setUp(self):
         RunBrowserToUrl("chrome","http://stage.telerikacademy.com/")
         if exists(MainPage.enterButton):
@@ -16,10 +17,10 @@ class MovedLecturesTests(unittest.TestCase):
            NavigateToMovedLectures()
         if exists(MovedLectures.removeItem):
             ClearGrid()
-    
+
     def tearDown(self):
         pass
-    
+
     def test_001_AddLectureWithoutCourseAddsLectureForAllCourses(self):
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)

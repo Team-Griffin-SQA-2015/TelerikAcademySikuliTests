@@ -216,8 +216,7 @@ def ExpandSurvey():
     sleep(1)
 
 def AddQuestion(questionType,question):
-    for i in range(1,13):
-        type(Key.DOWN)
+    ScrollDown(13)
     click(SearchTerms.button_Add)
     wait(Surveys.label_QuestionType)
     click(Surveys.label_QuestionType)
@@ -227,7 +226,10 @@ def AddQuestion(questionType,question):
     for checkbox in findAll(Surveys.image_CheckBox):
         click(checkbox)
     sleep(1)
-    for i in range(1,3):
-            type(Key.DOWN)
+    ScrollDown(3)
     sleep(2)
     click(SearchTerms.button_Update)
+
+def ScrollDown(times):
+    for i in range(1, times):
+            type(Key.DOWN)
