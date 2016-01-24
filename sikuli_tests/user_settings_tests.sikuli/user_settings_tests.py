@@ -3,8 +3,10 @@ from _lib import *
 from sikuli import *
 import HTMLTestRunner
 import unittest
+
 bdLibPath = os.path.abspath(sys.argv[0] + "..")
-if not bdLibPath in sys.path: sys.path.append(bdLibPath)
+if not bdLibPath in sys.path:
+    sys.path.append(bdLibPath)
 
 
 class SmokeTests(unittest.TestCase):
