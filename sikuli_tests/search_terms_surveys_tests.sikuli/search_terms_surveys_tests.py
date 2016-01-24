@@ -18,23 +18,21 @@ class SmokeTests(unittest.TestCase):
         RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/SearchTerms")
         wait(SearchTerms.button_Add, 30)
         AddSearchTerm("","10")
-        ScrollDown()
-
+        ScrollDown(2)
         assert exists(SearchTerms.word_ErrorMessageForRequired)
 
     def test_002_AddInvalidSearchTermWithHigherLengthWordShouldDisplayError(self):
         RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/SearchTerms")
         wait(SearchTerms.button_Add, 30)
         AddSearchTerm("dasdadsadasdasdsadsadsadsadsadsadsadsadsadasdsadasdasdadddddddddddddddddddssssssssssssssssssssssssssssss","10")
-        ScrollDown()
-
+        ScrollDown(2)
         assert exists(SearchTerms.word_ErrorMessageForLength)
 
     def test_003_AddInvalidSearchTermWithEmptyCountShouldDisplayError(self):
         RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/SearchTerms")
         wait(SearchTerms.button_Add, 30)
         AddSearchTerm("NewTESTWORD",Key.BACKSPACE)
-        ScrollDown()
+        ScrollDown(2)
         assert exists(SearchTerms.count_ErrorMessage)
 
     def test_004_AddValidSearchTermShouldSucceed(self):
@@ -84,9 +82,7 @@ class SmokeTests(unittest.TestCase):
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(SmokeTests)
-
     outfile = open("report.html", "w")
     runner = HTMLTestRunner.HTMLTestRunner(stream=outfile, title='SmokeTests Report' )
     runner.run(suite)
     outfile.close()
-

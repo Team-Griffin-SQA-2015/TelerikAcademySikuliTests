@@ -68,7 +68,7 @@ class MovedLecturesTests(unittest.TestCase):
         click(MovedLectures.deletePopUp)
         assert exists(MovedLectures.emptyGrid)
 
-    def test_007_VerifyThatUpdatingAnEntryWithValidDetailsChangesTheCurrentDetails(self):
+    def test_007_UpdateEntryWithValidDetailsChangesTheCurrentDetails(self):
         click(MovedLectures.addNewItem)
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)
@@ -78,7 +78,7 @@ class MovedLecturesTests(unittest.TestCase):
         click(MovedLectures.refreshGrid)
         assert exists(MovedLectures.validEntry)
 
-    def test_008_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
+    def test_008_UpdateEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)
         click(MovedLectures.updateButton)
@@ -89,7 +89,7 @@ class MovedLecturesTests(unittest.TestCase):
         click(MovedLectures.refreshGrid)
         assert exists(MovedLectures.validForAllCOursesText)
 
-    def test_009_VerifyThatUpdatingAnEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
+    def test_009_UpdateEntryWithInvalidDetailsDoesntChangesTheCurrentDetails(self):
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)
         click(MovedLectures.updateButton)
@@ -104,7 +104,7 @@ class MovedLecturesTests(unittest.TestCase):
         type("Archer QA"+Key.TAB)
         assert exists(MovedLectures.validEntry)
 
-    def test_010_VerifyThatClickingExportPDFCreatedPDFFileWithTheContentsOfTheGrid(self):
+    def test_010_ExportPDFCreatedPDFFileWithTheContentsOfTheGrid(self):
         currentTime = time.strftime("%H%M%S")
         path = "D:\\testexport{0}.pdf".format(currentTime);
         click(MovedLectures.addNewItem)
@@ -121,13 +121,9 @@ class MovedLecturesTests(unittest.TestCase):
         type(Key.NUM1,KeyModifier.CTRL)
         assert exists(MovedLectures.exportedValidEntry)
 
-
-
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(MovedLecturesTests)
-
     outfile = open("moved_lectures_tests_report.html", "w")
     runner = HTMLTestRunner.HTMLTestRunner(stream=outfile, title='Moved Lectures Report' )
     runner.run(suite)
     outfile.close()
-

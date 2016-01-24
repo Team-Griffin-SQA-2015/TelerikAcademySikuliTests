@@ -3,7 +3,6 @@ from sikuli import *
 class LoginPage:
     loginHeading = "loginHeading.png"
     loginHeading = "loginHeading.png"
-
     username = "username.png"
     password = "password.png"
     submitButton = "submitButton.png"
@@ -12,12 +11,10 @@ class MainPage:
     enterButton = Pattern("enterButton.png").targetOffset(-43,-2)
     logoutButton = "logoutButton.png"
     logoutButton = "logoutButton.png"
-
     adminMenu = Pattern("adminMenu.png").similar(0.87)
     telerikAcademyMenu = "telerikAcademyMenu.png"
     entryExamMenu = "entryExamMenu.png"
     applicationForAcademyMenu = "applicationForAcademyMenu.png"
-
     adminMovedLectures = "adminMovedLectures.png"
 
 class MovedLectures:

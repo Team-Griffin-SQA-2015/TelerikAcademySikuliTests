@@ -19,12 +19,10 @@ class ApplicationForSoftwareAcademyTests(unittest.TestCase):
             click(MainPage.logoutButton)
         sleep(3)
         wait(MainPage.enterButton)
-
         wait(MainPage.telerikAcademyMenu)
         hover(MainPage.telerikAcademyMenu)
         wait(MainPage.applicationForAcademyMenu)
         click(MainPage.applicationForAcademyMenu)
-
         wait(LoginPage.loginHeading, 30)
         assert exists(LoginPage.loginHeading)
 
@@ -35,12 +33,10 @@ class ApplicationForSoftwareAcademyTests(unittest.TestCase):
         hover(MainPage.telerikAcademyMenu)
         wait(MainPage.applicationForAcademyMenu)
         click(MainPage.applicationForAcademyMenu)
-
         wait(EntryExam.applicationForAcademyHeading)
 
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(ApplicationForSoftwareAcademyTests)
-
     outfile = open("_application_for_software_academy_tests_report.html", "w")
     runner = HTMLTestRunner.HTMLTestRunner(stream=outfile, title='Application for software academy tests Report')
     runner.run(suite)

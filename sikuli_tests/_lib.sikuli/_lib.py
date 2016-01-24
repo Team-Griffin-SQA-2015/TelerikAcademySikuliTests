@@ -45,8 +45,7 @@ def NavigateToMovedLectures():
 
 def ClearGrid():
     wait(MovedLectures.removeItem)
-
-    while exists(MovedLectures.removeItem):
+    while exists(MovedLectures.removeItem, 10):
         click(MovedLectures.removeItem)
         wait(MovedLectures.deletePopUp)
         click(MovedLectures.deletePopUp)
