@@ -4,19 +4,19 @@ import time
 
 bdLibPath = os.path.abspath(sys.argv[0]+"..")
 if not bdLibPath in sys.path:
-    sys.path.append(bdLibPath)  
+    sys.path.append(bdLibPath)
 
 class MovedLecturesTests(unittest.TestCase):
 
     def setUp(self):
-        RunBrowserToUrl("chrome", "http://stage.telerikacademy.com/")
+        runBrowserToUrl("chrome", "http://stage.telerikacademy.com/")
         if exists(MainPage.enterButton):
-            AdminLogin("griffin", "Start123")
-            NavigateToMovedLectures()
+            adminLogin("griffin", "Start123")
+            navigateToMovedLectures()
         else:
-            NavigateToMovedLectures()
+            navigateToMovedLectures()
         if exists(MovedLectures.removeItem):
-            ClearGrid()
+            clearGrid()
 
     def tearDown(self):
         pass
@@ -35,7 +35,7 @@ class MovedLecturesTests(unittest.TestCase):
 
     def test_003_AddLectureWithValidDetailsCreatesNewEntry(self):
         click(MovedLectures.addNewItem)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
         assert exists(MovedLectures.validEntry)
 
@@ -52,10 +52,10 @@ class MovedLecturesTests(unittest.TestCase):
 
     def test_005_AddLectureWithSameDetailsMoreThanOnceDisplaysError(self):
         click(MovedLectures.addNewItem)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
         click(MovedLectures.addNewItem)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         assert exists(MovedLectures.startDateValidationError)
 
     def test_006_DeleteButtonRemovesTheRespectiveEntryFromTheList(self):
@@ -74,7 +74,7 @@ class MovedLecturesTests(unittest.TestCase):
         wait(MovedLectures.popUpTitle)
         click(MovedLectures.updateButton)
         click(MovedLectures.editItem)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
         assert exists(MovedLectures.validEntry)
 
@@ -83,7 +83,7 @@ class MovedLecturesTests(unittest.TestCase):
         wait(MovedLectures.popUpTitle)
         click(MovedLectures.updateButton)
         click(MovedLectures.editItem)
-        FillInLectureFullInvalidDetails()
+        fillInLectureFullInvalidDetails()
         wait(MovedLectures.startDateValidationError)
         click(MovedLectures.cancelButton)
         click(MovedLectures.refreshGrid)
@@ -94,7 +94,7 @@ class MovedLecturesTests(unittest.TestCase):
         wait(MovedLectures.popUpTitle)
         click(MovedLectures.updateButton)
         click(MovedLectures.addNewItem)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
         click(MovedLectures.coursesFilterDropdown)
         click(MovedLectures.courseFilterDropDownAllCourses)
@@ -109,7 +109,7 @@ class MovedLecturesTests(unittest.TestCase):
         path = "D:\\testexport{0}.pdf".format(currentTime)
         click(MovedLectures.addNewItem)
         wait(MovedLectures.popUpTitle)
-        FillInLectureFullDetails()
+        fillInLectureFullDetails()
         click(MovedLectures.refreshGrid)
         click(MovedLectures.exportToPDF)
         wait(MovedLectures.exportPopUp)
