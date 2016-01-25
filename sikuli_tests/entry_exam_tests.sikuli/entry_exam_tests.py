@@ -2,13 +2,13 @@ from _lib import *
 import unittest
 import time
 
-bdLibPath=os.path.abspath(sys.argv[0]+"..")
+bdLibPath = os.path.abspath(sys.argv[0]+"..")
 if not bdLibPath in sys.path:
     sys.path.append(bdLibPath)
 
 class EntryExamTests(unittest.TestCase):
     def setUp(self):
-        RunBrowserToUrl("chrome","http://stage.telerikacademy.com/")
+        RunBrowserToUrl("chrome", "http://stage.telerikacademy.com/")
         sleep(3)
 
     def tearDown(self):
@@ -17,14 +17,14 @@ class EntryExamTests(unittest.TestCase):
     def test_001_NavigateToEntryExamWithLoggedUser(self):
         wait(MainPage.enterButton, 20)
         if exists(MainPage.enterButton):
-            AdminLogin("griffin","Start123")
+            AdminLogin("griffin", "Start123")
         sleep(3)
         hover(MainPage.telerikAcademyMenu)
         wait(MainPage.entryExamMenu)
         click(MainPage.entryExamMenu)
         wheel(EntryExam.applicationForAcademyHeading, WHEEL_DOWN, 2)
         assert exists(EntryExam.applicationForAcademyHeading)
-        #self.assertTrue(exists(EntryExam.applicationForAcademyHeading))
+        # self.assertTrue(exists(EntryExam.applicationForAcademyHeading))
 
     def test_002_NavigateToEntryExamWithoutLogin(self):
         if exists(MainPage.logoutButton):
@@ -38,7 +38,7 @@ class EntryExamTests(unittest.TestCase):
         wait(LoginPage.loginHeading, 30)
         assert exists(LoginPage.loginHeading)
 
-    def test_002_NavigateToEntryExamWithoutLogin(self):
+    def test_003_NavigateToEntryExamWithoutLogin(self):
         wait(MainPage.logoutButton, 20)
         if exists(MainPage.logoutButton):
             click(MainPage.logoutButton)

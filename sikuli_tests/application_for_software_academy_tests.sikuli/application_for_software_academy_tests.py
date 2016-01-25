@@ -2,7 +2,7 @@ from _lib import *
 import unittest
 import time
 
-bdLibPath=os.path.abspath(sys.argv[0]+"..")
+bdLibPath = os.path.abspath(sys.argv[0]+"..")
 if not bdLibPath in sys.path:
     sys.path.append(bdLibPath)
 

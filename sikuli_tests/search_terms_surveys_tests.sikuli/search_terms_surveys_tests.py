@@ -36,7 +36,7 @@ class SmokeTests(unittest.TestCase):
         assert exists(SearchTerms.count_ErrorMessage)
 
     def test_004_AddValidSearchTermShouldSucceed(self):
-        RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/SearchTerms")
+        RunBrowserToUrl("chrome", "http://stage.telerikacademy.com/Administration/SearchTerms")
         wait(SearchTerms.button_Add, 30)
         AddSearchTerm("NewSearchTerm","10")
         ScrollDown()
@@ -52,7 +52,7 @@ class SmokeTests(unittest.TestCase):
         wait(SearchTerms.checker_PDF, 30)
 
     def test_007_AddValidSurveyShouldSucceed(self):
-        RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/Surveys/Index")
+        RunBrowserToUrl("chrome", "http://stage.telerikacademy.com/Administration/Surveys/Index")
         wait(SearchTerms.button_Add, 30)
         AddSurvey("NewSurvey")
         assert exists(Surveys.survey_Result)
@@ -63,7 +63,7 @@ class SmokeTests(unittest.TestCase):
         assert exists(Surveys.question_Result)
 
     def test_009AddInvalidQuestionWithEmptyTextShouldDisplayError(self):
-        RunBrowserToUrl("chrome","http://stage.telerikacademy.com/Administration/Surveys/Index")
+        RunBrowserToUrl("chrome", "http://stage.telerikacademy.com/Administration/Surveys/Index")
         wait(SearchTerms.button_Add, 30)
         AddSurvey("NewSurvey")
         ExpandSurvey()
@@ -76,7 +76,7 @@ class SmokeTests(unittest.TestCase):
         wait(SearchTerms.button_Add, 30)
         AddSurvey("NewSurvey")
         ExpandSurvey()
-        AddQuestion(Surveys.label_QuestionType,"new question")
+        AddQuestion(Surveys.label_QuestionType, "new question")
         sleep(1)
         assert exists(Surveys.question_TypeErrorMessage)
 
