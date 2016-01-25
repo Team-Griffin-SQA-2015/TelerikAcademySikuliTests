@@ -28,7 +28,7 @@ class ApplicationForSoftwareAcademyTests(unittest.TestCase):
 
     def test_002_NavigateToApplicationWithLoggedUser(self):
         if exists(MainPage.enterButton):
-            AdminLogin("griffin","Start123")
+            AdminLogin("griffin", "Start123")
         sleep(3)
         hover(MainPage.telerikAcademyMenu)
         wait(MainPage.applicationForAcademyMenu)
